@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Divs from JSON using Vue 3</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="../src/output.css">
+    
+    <style>
+        .content-div {
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+    </h1>
+    <div id="app"  class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <div v-for="item in items" :key="item.title" class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+            <img :src="item.image" :alt="item.title" class="content-image">
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">{{ item.title }}</div>
+                <p class="text-gray-700 text-base">
+                    {{ item.content }}
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../src/app.js"></script>
+</body>
+
+</html>
