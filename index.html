@@ -10,17 +10,18 @@
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
-    <div id="app"  class="bg-gray-100 flex items-center justify-center min-h-screen">
-        <div v-for="item in items" :key="item.title" class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-            <img :src="item.image" :alt="item.title" class="content-image">
-            <div class="px-6 py-4">
-                <div class="font-bold text-xl mb-2">{{ item.title }}</div>
-                <p class="text-yellow-400 text-base">
-                    {{ item.content }}
-                </p>
+    <div id="app" class="bg-gray-100">
+        <div class="grid grid-cols-4 gap-4">
+            <div v-for="item in items" :key="item.title"
+                class="max-w-sm w-64 h-80 rounded overflow-hidden shadow-lg bg-white m-4">
+                <img :src="item.image" :alt="item.title" class="content-image w-full h-40 object-cover">
+                <div class="px-6 py-4 h-40">
+                    <div class="font-bold text-xl mb-2 overflow-hidden text-ellipsis whitespace-nowrap">{{ item.title }}
+                    </div>
+                    <p class="text-yellow-400 text-base overflow-hidden text-ellipsis whitespace-nowrap">
+                        {{ item.content }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
